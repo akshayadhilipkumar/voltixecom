@@ -1,0 +1,93 @@
+/* ============ style.css : LAYOUT + COMPONENTS ============ */
+* { box-sizing: border-box; margin: 0; }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+.card { background: var(--card); border-radius: var(--radius); }
+
+/* Layout: sidebar + main */
+.shell { display: flex; gap: 20px; padding: 24px; min-height: 100vh; align-items: flex-start; }
+.sidebar { width: 260px; padding: 28px 20px; position: sticky; top: 24px; flex-shrink: 0; }
+.main { flex: 1; min-width: 0; }
+.brand { text-align: center; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.brand h1 { letter-spacing: 0.35em; font-size: 22px; margin-top: 8px; }
+.brand p { font-size: 12px; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
+.sidebar h4 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 22px 12px 8px; font-weight: 500; }
+.sidebar nav a { display: block; padding: 12px; border-radius: 14px; font-size: 17px; }
+.sidebar nav a:hover, .sidebar nav a.active { background: var(--soft); }
+
+/* Top bar */
+.topbar { display: flex; align-items: center; gap: 22px; padding: 14px 18px; margin-bottom: 22px; }
+.topbar > a { font-weight: 700; white-space: nowrap; }
+.search { flex: 1; }
+.search input { width: 100%; padding: 16px 22px; border: 0; border-radius: 18px; background: var(--soft); color: var(--text); font-size: 17px; outline: none; }
+.search input:focus { box-shadow: 0 0 0 2px var(--primary); }
+.icon-btn { border: 0; background: var(--soft); width: 56px; height: 56px; border-radius: 16px; cursor: pointer; font-size: 20px; }
+.cart-btn { background: var(--dark); color: #fff; padding: 18px 22px; border-radius: 18px; display: flex; gap: 8px; align-items: center; }
+.badge { background: var(--accent); color: #1b1741; border-radius: 999px; padding: 2px 10px; font-size: 14px; }
+
+/* Buttons */
+.btn { background: var(--dark); color: #fff; border: 0; padding: 12px 22px; border-radius: 16px; cursor: pointer; font-weight: 700; }
+.btn:hover { opacity: 0.9; }
+.btn.ghost { background: var(--soft); color: var(--text); }
+
+/* Product grid + card */
+h2.title { font-size: 26px; margin: 8px 0 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.product { padding: 14px; display: flex; flex-direction: column; gap: 8px; position: relative; }
+.product img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 16px; background: var(--soft); }
+.product .brand-name { color: var(--muted); font-size: 13px; }
+.product .name { font-weight: 700; }
+.product .price { font-size: 20px; font-weight: 700; }
+.product .row { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+.heart { position: absolute; top: 22px; right: 22px; border: 0; background: var(--card); width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 18px; filter: grayscale(1); }
+.heart.on { filter: none; }
+
+/* Hero (home) */
+.hero { background: linear-gradient(120deg, var(--primary), #4a2fd0); color: #fff; border-radius: var(--radius); padding: 48px; margin-bottom: 28px; }
+.hero h2 { font-size: 40px; max-width: 520px; line-height: 1.1; }
+.hero p { margin: 12px 0 22px; opacity: 0.9; }
+.hero .btn { background: var(--accent); color: #1b1741; }
+
+/* Toolbar, cart rows, orders, forms */
+.toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+select { padding: 10px 14px; border-radius: 12px; border: 0; background: var(--soft); color: var(--text); }
+.list { display: flex; flex-direction: column; gap: 14px; }
+.row-card { display: flex; gap: 16px; align-items: center; padding: 14px; }
+.row-card img { width: 90px; height: 70px; object-fit: cover; border-radius: 12px; }
+.row-card .grow { flex: 1; }
+.qty { display: flex; align-items: center; gap: 10px; }
+.qty button { width: 32px; height: 32px; border-radius: 10px; border: 0; background: var(--soft); color: var(--text); cursor: pointer; font-size: 18px; }
+.summary { padding: 20px; display: flex; justify-content: space-between; align-items: center; margin-top: 16px; font-size: 20px; font-weight: 700; }
+.status { background: var(--accent); color: #1b1741; padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+.order { padding: 18px; }
+.order .head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+.form { max-width: 420px; margin: 20px auto; padding: 32px; display: flex; flex-direction: column; gap: 14px; }
+.form input { padding: 14px 18px; border: 0; border-radius: 14px; background: var(--soft); color: var(--text); outline: none; }
+.form .link { text-align: center; color: var(--primary); cursor: pointer; }
+.state { text-align: center; padding: 70px 20px; color: var(--muted); }
+.state .big { font-size: 56px; }
+.state .btn { margin-top: 14px; }
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--dark); color: #fff; padding: 12px 22px; border-radius: 14px; opacity: 0; transition: 0.25s; z-index: 10; }
+.toast.show { transform: translateX(-50%); opacity: 1; }
+
+/* Mobile */
+@media (max-width: 900px) {
+  .shell { flex-direction: column; padding: 14px; }
+  .sidebar { width: 100%; position: static; padding: 16px; }
+  .sidebar nav { display: flex; flex-wrap: wrap; gap: 4px; }
+  .sidebar h4 { display: none; }
+  .topbar { flex-wrap: wrap; }
+  .search { flex-basis: 100%; }
+  .hero { padding: 28px; } .hero h2 { font-size: 28px; }
+}
+
+/* ===== Loyalty: profile + badges ===== */
+.muted { color: var(--muted); font-size: 14px; }
+.profile { display: flex; justify-content: space-between; align-items: center; padding: 24px; flex-wrap: wrap; gap: 14px; }
+.profile h3 { font-size: 22px; }
+.profile-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.progress { margin: 14px 4px 22px; }
+.tier { padding: 8px 16px; border-radius: 999px; font-weight: 700; background: var(--soft); color: var(--text); }
+.tier.bronze { background: #e9c9a0; color: #4a2b0a; }
+.tier.silver { background: #d9dde8; color: #2a2f3f; }

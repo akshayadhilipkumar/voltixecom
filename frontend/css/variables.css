@@ -1,0 +1,23 @@
+/* ============ variables.css : COLORS (Voltix palette) ============ */
+:root {
+  --bg: #f3f1fc;
+  --card: #ffffff;
+  --text: #1b1741;
+  --muted: #6b6785;
+  --primary: #7c5cf6;   /* purple */
+  --accent: #c8f031;    /* lime */
+  --dark: #1b1741;      /* navy buttons */
+  --soft: #ebe8fa;      /* input / icon bg */
+  --line: #e7e4f5;
+  --radius: 24px;
+}
+/* IMPORTANT: dark mode - html tag la data-theme="dark" vandha indha colors apply aagum */
+html[data-theme="dark"] {
+  --bg: #120f2b;
+  --card: #1d1946;
+  --text: #f2f0ff;
+  --muted: #a9a4cc;
+  --dark: #7c5cf6;
+  --soft: #2a2560;
+  --line: #2f2a66;
+}
